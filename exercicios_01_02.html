@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercicio 01</title>
+  </head>
+  <body>
+
+<script type="text/javascript">
+
+/*Exercício 01) O Sr. Pablo Werneck, dono de uma loja de CD’s de música, está fazendo uma pesquisa
+com seus clientes sobre sua preferência musical. Para tanto, é apresentado um questionário
+aos clientes com as seguintes questões:
+• Qual seu nome? String
+• Qual sua escolaridade? Nível Fundamental, Nível Médio, Nível Superior, Pós-graduação,
+Mestrado e Doutorado;
+• Qual sua renda mensal? até 1 salário mínimo, até 2 salários mínimos, até 3 salários mínimo e acima
+de 4 salários mínimos;
+• Qual seu sexo?
+• Qual sua idade?
+• Qual seu gênero musical preferido?
+• Qual seu artista (ou grupo ou banda) favorito?
+
+Faça um programa que apresente o questionário enquanto o usuário responder
+afirmativamente à pergunta “Registrar resposta de outro cliente?”. O programa deve
+receber os dados do usuário e, posteriormente, apresentar os seguintes resultados:
+a) A porcentagem para cada nível de escolaridade.
+Considere: Nível Fundamental, Nível Médio, Nível Superior, Pós-graduação,
+Mestrado e Doutorado;
+b) A porcentagem para cada renda mensal.
+Considere: até 1 salário mínimo, até 2 salários mínimos, até 3 salários mínimo e acima
+de 4 salários mínimos;
+c) A porcentagem para cada sexo.
+Considere: Masculino, Feminino e Desejo não declarar
+d) A porcentagem para cada gênero musical.
+Considere: Rock, Axé, Sertanejo, Pop, MPB e Forró)
+e) A porcentagem para cada artista (ou grupo ou banda);
+f) Sr. Pablo Werneck deseja fazer uma promoção especial para o gênero musical
+sertanejo e forro, para tanto, deseja saber quais clientes (ou seja, todas as informações
+pessoais) e a porcentagem destes (do total de clientes cadastrados), que possuem o
+sertanejo e forró como gênero musical preferido.
+g) Sr. Pablo Werneck gostaria de saber o gosto musical dos clientes de maior poder
+aquisitivo, ou seja, maior renda mensal cadastrada. Portanto, apresente uma lista e a
+porcentagem, dos clientes que possuem a maior renda mensal cadastrada e o gênero
+musical preferido deste grupo.
+h) Para cada faixa etária a seguir, qual a porcentagem para cada gênero musical;
+a. 10 a 17 anos
+b. 18 a 25 anos*/
+
+//(var i=0; i<200; i++)//
+
+var intrucoes = alert("Para que o porgrama funcione corretamente, preencha TODOS os campos")
+var outraPessoa = 1;
+
+var pessoas = new Array();
+
+do {
+  var pessoa = {
+
+  nome : prompt("Digite o seu nome: "),
+  escolaridade : parseInt(prompt("Digite a escolaridade da pessoa: "
+                  +"\n 1 - para Nível Fundamental"
+                  +"\n 2 - para Nível Médio"
+                  +"\n 3 - para ensino Nível Superior"
+                  +"\n 4 - para Pós-graduação"
+                  +"\n 5 - para Mestrado"
+                  +"\n 6 - para Doutorado")),
+
+  idade : parseInt(prompt("Digite a idade da pessoa: ")),
+
+  sexo : parseInt(prompt("Digite o sexo da pessoa: "
+                  +"\n 1 - para sexo masculino"
+                  +"\n 2 - para sexo feminino"
+                  +"\n 3 - para não declarar o sexo")),
+
+  rendaMensal :  parseInt(prompt("Digite a renda mensal da pessoa: "
+                  +"\n 1 - para até 1 salário mínimo"
+                  +"\n 2 - para até 2 salários mínimos"
+                  +"\n 3 - para até 3 salários mínimos"
+                  +"\n 4 - para acima de 4 salários mínimos")),
+
+  generoMusical : parseInt(prompt("Digite o gênero musical preferido da pessoa: "
+                  +"\n 1 - para Rock"
+                  +"\n 2 - para Axé"
+                  +"\n 3 - para Sertanejo"
+                  +"\n 4 - para Pop"
+                  +"\n 5 - para MPB"
+                  +"\n 6 - para Forró")),
+
+  artista : parseInt(prompt("Digite o artista preferido da pessoa: "
+                  +"\n 1 - para Linkin Park"
+                  +"\n 2 - para RBD"
+                  +"\n 3 - para U2"
+                  +"\n 4 - para Nirvana")),
+                }
+
+  pessoas.push(pessoa); //inserir na última posição//
+  outraPessoa = parseInt(prompt("Você deseja registrar a resposta de outro cliente?" //pergunta se quer continuar o registro ou encerrar
+                   +"\n Digite 1 para SIM"
+                   +"\n Digite 2 para NÃO"));
+} while (outraPessoa !=2);
+
+//a)porcentagem do nível de escolaridade
+//a)porcentagem do nível de escolaridade
+//a)porcentagem do nível de escolaridade
+//a)porcentagem do nível de escolaridade
+
+
+console.log("Quantidade de pessoas inseridas pelo usuário: " + pessoas.length + " pessoa (s)");
+
+//declarar os contadorEscolaridade
+
+var contadorEscolaridadeFundamental = 0;
+var contadorEscolaridadeMedia = 0;
+var contadorEscolaridadeSuperior = 0;
+var contadorEscolaridadePosGraduacao = 0;
+var contadorEscolaridadeMestrado = 0;
+var contadorEscolaridadeDoutorado = 0;
+
+for ( var i=0; i<pessoas.length; i++){
+  if (pessoas[i].escolaridade == 1)
+    contadorEscolaridadeFundamental++;
+  if (pessoas[i].escolaridade == 2)
+    contadorEscolaridadeMedia++;
+  if (pessoas[i].escolaridade == 3)
+    contadorEscolaridadeSuperior++;
+  if (pessoas[i].escolaridade == 4)
+    contadorEscolaridadePosGraduacao++;
+  if (pessoas[i].escolaridade == 5)
+    contadorEscolaridadeMestrado++;
+  if (pessoas[i].escolaridade == 6)
+    contadorEscolaridadeDoutorado++;
+  }
+
+  //declaração dos percentuais
+
+  var percentualEscolaridadeFundamental = (contadorEscolaridadeFundamental*100)/pessoas.length;
+  var percentualEscolaridadeMedia = (contadorEscolaridadeMedia*100)/pessoas.length;
+  var percentualEscolaridadeSuperior = (contadorEscolaridadeSuperior*100)/pessoas.length;
+  var percentualEscolaridadePosGraduacao = (contadorEscolaridadePosGraduacao*100)/pessoas.length;
+  var percentualEscolaridadeMestrado = (contadorEscolaridadeMestrado*100)/pessoas.length;
+  var percentualEscolaridadeDoutorado = (contadorEscolaridadeDoutorado*100)/pessoas.length;
+
+  console.log("Escolaridade Fundamental: "+ percentualEscolaridadeFundamental +"%\nEscolaridade Média:" + percentualEscolaridadeMedia +"%\nEscolaridade Superior: "+ percentualEscolaridadeSuperior + "%\nEscolaridade Pós Graduação: " + percentualEscolaridadePosGraduacao + "%\nEscolaridade Mestrado: "+ percentualEscolaridadeMestrado + "%\nEscolaridade Doutorado: "+ percentualEscolaridadeDoutorado + "%");
+
+  // b)porcentagem da renda
+  // b)porcentagem da renda
+  // b)porcentagem da renda
+  // b)porcentagem da renda
+
+  var contadorAteUmSalarioMinimo = 0;
+  var contadorAteDoisSalarioMinimo = 0;
+  var contadorAteTresSalarioMinimo = 0;
+  var contadorAcimaQuatroSalarioMinimo = 0;
+
+  for ( var i=0; i<pessoas.length; i++){
+          if (pessoas[i].rendaMensal == 1)
+          contadorAteUmSalarioMinimo++;
+          if (pessoas[i].rendaMensal == 2)
+          contadorAteDoisSalarioMinimo++;
+          if (pessoas[i].rendaMensal == 3)
+          contadorAteTresSalarioMinimo++;
+          if (pessoas[i].rendaMensal == 4)
+          contadorAcimaQuatroSalarioMinimo++;
+      }
+
+  var percentualAteUmSalarioMinimo = (contadorAteUmSalarioMinimo*100)/pessoas.length;
+  var percentualAteDoisSalarioMinimo = (contadorAteDoisSalarioMinimo*100)/pessoas.length;
+  var percentualAteTresSalarioMinimo = (contadorAteTresSalarioMinimo*100)/pessoas.length;
+  var percentualAcimaQuatroSalarioMinimo = (contadorAcimaQuatroSalarioMinimo*100)/pessoas.length;
+
+console.log("Pessoas com até 01 salário mínimo: "+ percentualAteUmSalarioMinimo +"%\nPessoas com até 02 salários mínimos: " + percentualAteDoisSalarioMinimo +"%\nPessoas com até 03 salários mínimos: "+ percentualAteTresSalarioMinimo + "%\nPessoas com mais de 04 salários mínimos: " + percentualAcimaQuatroSalarioMinimo + "%");
+
+//c) a porcentagem para cada sexo
+//c) a porcentagem para cada sexo
+//c) a porcentagem para cada sexo
+//c) a porcentagem para cada sexo
+
+var contadorMasculino = 0;
+var contadorFeminino = 0;
+var contadorNaoDeclarou = 0;
+
+for ( var i=0; i < pessoas.length; i++){
+        if (pessoas[i].sexo == 1)
+        contadorMasculino++;
+        if (pessoas[i].sexo == 2)
+        contadorFeminino++;
+        if (pessoas[i].sexo == 3)
+        contadorNaoDeclarou++;
+    }
+
+var percentualMasculino = (contadorMasculino*100)/pessoas.length;
+var percentualFeminino = (contadorFeminino*100)/pessoas.length;
+var percentualNaoDeclarou = (contadorNaoDeclarou*100)/pessoas.length;
+
+console.log("Pessoas do sexo masculino: "+ percentualMasculino +"%\nPessoas do sexo feminino: " + percentualFeminino +"%\nPessoas que não declararam o sexo: "+ percentualNaoDeclarou + "%");
+
+//d) a porcentagem para cada gênero musical
+//d) a porcentagem para cada gênero musical
+//d) a porcentagem para cada gênero musical
+//d) a porcentagem para cada gênero musical
+
+var contadorRock = 0;
+var contadorAxe = 0;
+var contadorSertanejo = 0;
+var contadorPop = 0;
+var contadorMpb = 0;
+var contadorForro = 0;
+
+for ( var i=0; i < pessoas.length; i++){
+        if (pessoas[i].generoMusical == 1)
+          contadorRock++;
+        if (pessoas[i].generoMusical == 2)
+          contadorAxe++;
+        if (pessoas[i].generoMusical == 3)
+          contadorSertanejo++;
+        if (pessoas[i].generoMusical == 4)
+          contadorPop++;
+        if (pessoas[i].generoMusical == 5)
+          contadorMpb++;
+        if (pessoas[i].generoMusical == 6)
+          contadorForro++;
+    }
+
+var contadorSertanejoForro = contadorSertanejo + contadorForro;
+
+var percentualRock = (contadorRock*100)/pessoas.length;
+var percentualAxe = (contadorAxe*100)/pessoas.length;
+var percentualSertanejo = (contadorSertanejo*100)/pessoas.length;
+var percentualPop = (contadorPop*100)/pessoas.length;
+var percentualMpb = (contadorMpb*100)/pessoas.length;
+var percentualForro = (contadorForro*100)/pessoas.length;
+
+console.log("Pessoas que curtem Rock: "+ percentualRock +"%\nPessoas que curtem Axé: " + percentualAxe +"%\nPessoas que curtem Sertanejo: "+ percentualSertanejo + "%\nPessoas que curtem Pop: " + percentualPop +"%\nPessoas que curtem MPB " + percentualMpb +"%\nPessoas que curtem forró: " +percentualForro + "%");
+
+//e)a porcentagem para cada artista (ou grupo ou banda);
+//e)a porcentagem para cada artista (ou grupo ou banda);
+//e)a porcentagem para cada artista (ou grupo ou banda);
+//e)a porcentagem para cada artista (ou grupo ou banda);
+
+var contadorLinkinPark = 0;
+var contadorRbd = 0;
+var contadorU2 = 0;
+var contadorNirvana = 0;
+
+for ( var i=0; i < pessoas.length; i++){
+        if (pessoas[i].artista == 1)
+        contadorLinkinPark++;
+        if (pessoas[i].artista == 2)
+        contadorRbd++;
+        if (pessoas[i].artista == 3)
+        contadorU2++;
+        if (pessoas[i].artista == 4)
+        contadorNirvana++;
+    }
+
+var percentualLinkinPark = (contadorLinkinPark*100)/pessoas.length;
+var percentualRbd = (contadorRbd*100)/pessoas.length;
+var percentualU2 = (contadorU2*100)/pessoas.length;
+var percentualNirvana = (contadorNirvana*100)/pessoas.length;
+
+console.log("Linkin Park: "+ percentualLinkinPark +"%\nRBD: " + percentualRbd +"%\nU2: "+ percentualU2 + "%\nNirvana: " + percentualNirvana + "%");
+
+// f) número de clientes que curtem sertanejo e forró - também é necessário que retorne as informações deles
+// f) número de clientes que curtem sertanejo e forró - também é necessário que retorne as informações deles
+// f) número de clientes que curtem sertanejo e forró - também é necessário que retorne as informações deles
+// f) número de clientes que curtem sertanejo e forró - também é necessário que retorne as informações deles
+
+console.log("O número de clientes que curtem sertanejo e forró é: " + contadorSertanejoForro );
+
+
+
+for ( var i=0; i < pessoas.length; i++) { //está faltando acrescentar as características ao lado do nome...//
+  if (pessoas[i].generoMusical == 3 || pessoas[i].generoMusical == 6) {
+    console.log("O nome das pessoas é: " + pessoas[i].nome + ", " + pessoas[i].idade + ", " + pessoas[i].sexo + "\n"); //colocar string com nomes, etc
+  }
+}
+
+//h) para cada faixa etária a seguir, qual a porcentagem para cada gênero musical;
+//a. 10 a 17 anos
+//b. 18 a 25 anos
+
+var contador10a17 = 0;
+var contador18a25 = 0;
+
+for ( var i=0; i < pessoas.length; i++) {
+  if (pessoas[i].idade >=10 && pessoas[i].idade <=17)
+  contador10a17++;
+  if (pessoas[i].idade >=18 && pessoas[i].idade <=25)
+  contador18a25++;
+  }
+
+var percentual10a17 = (contador10a17*100)/pessoas.length;
+var percentual18a25 = (contador18a25*100)/pessoas.length;
+
+console.log("Pessoas com 10 a 17 anos: " + percentual10a17 + "%\nPessoas com 18 a 25 anos:" + percentual18a25 + "%");
+
+/*Exercício 02) O Sr. Pablo ficou tão satisfeito com o resultado do seu programa que gostaria que você
+fizesse um outro programa, semelhante ao anterior, mas que, além de apresentar os resultados
+da questão anterior, mostrasse os nomes dos 4 artistas (ou grupo ou banda) mais citados e sua
+porcentagem; Como última tarefa para você, o Sr. Pablo deseja que seu programa apresente as
+informações de porcentagens na forma de um gráfico. Ele sabe que seu programa não
+apresenta gráficos no formato de imagens, então você pode apresentar um gráfico utilizando
+caracteres, semelhante ao seguinte:
+Gráfico % Preferência por Artista
+ 0% 100%
+Linkin’ Park - ||||||||||||||||||||||||||||||...................................................................... 30%
+RBD - |..................................................................................................1%
+U2 - ||||||||||||||||||||||||||||||||||||||||||||||||||.................................................... 50%
+Nirvana - |||||||||||||||||||................................................................................. 19%*/
+
+console.log("Linkin Park: " + "|".repeat(percentualLinkinPark)+".".repeat(100-percentualLinkinPark) + percentualLinkinPark + "%");
+console.log("RBD: " + "|".repeat(percentualRbd)+".".repeat(100-percentualRbd) + percentualRbd + "%");
+console.log("U2: " + "|".repeat(percentualU2)+".".repeat(100-percentualU2)+ percentualU2 + "%");
+console.log("Nirvana: " + "|".repeat(percentualNirvana)+".".repeat(100-percentualNirvana)+ percentualNirvana + "%");
+
+</script>
+  </body>
+</html>
